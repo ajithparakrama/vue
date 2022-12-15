@@ -1,18 +1,14 @@
 import AssigmentList from "./AssigmentList.js";
-
+import AssigmentCreate from "./AssigmentCreate.js"; 
 export default {
-    components:{AssigmentList},
+    components:{AssigmentList,AssigmentCreate},
     template:`  
     <section class="space-y-6">
     <assigment-list :assigments="filters.inProgress" title="Pending Assigments"></assigment-list>
     <assigment-list :assigments="filters.completed" title="Completed"></assigment-list>
 
-    <form @submit.prevent="add">
-    <div class="border border-gray-600" >
-    <input v-model="newAssigment" placeholder="New Assigment" class="text-gray-800 p-2">
-    <button type="submit" class="bg-white text-black p-2 border-l">Add</button>
-    </div>
-</form>
+    <assigment-create @add="add"></assigment-create>
+
     </section>
  `,
 data() {
@@ -35,9 +31,9 @@ computed: {
     }
 },
 methods: {
-    add(){
+    add(name){
       this.assigments.push({
-        name:this.newAssigment,
+        name:name,
         complet:false,
         id:this.assigments.length+1
       });
