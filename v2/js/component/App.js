@@ -1,6 +1,6 @@
 import Assigments from "./Assigments.js";
 export default {
-    component: {Assigments},
+    components: {Assigments},
     template : `<assigments></assigments> `,
 
 

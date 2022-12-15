@@ -1,23 +1,20 @@
-export default {
-    template:`    <div id="app">
-    <section v-show="progressAssigments.length" >
-        <h2 class="font-bold mb-2">Pending Assigments</h2>
-        <ul>
-            <li v-for="asign in progressAssigments" :key="asign.id"> <label >
-                {{ asign.name }} <input type="checkbox"  v-model="asign.complet" >
-            </label></li> 
-        </ul>
-        </section>
+import AssigmentList from "./AssigmentList.js";
 
-        <section v-show="compleatedAssigments.length"> 
-        <h2 class="font-bold mb-2">Completed</h2>
-        <ul>
-            <li v-for="asign in compleatedAssigments"  :key="asign.id"> <label >
-                {{ asign.name }} <input type="checkbox"  v-model="asign.complet" >
-            </label></li> 
-        </ul>
+export default {
+    components:{AssigmentList},
+    template:`  
+    <section class="space-y-6">
+    <assigment-list :assigments="filters.inProgress" title="Pending Assigments"></assigment-list>
+    <assigment-list :assigments="filters.completed" title="Completed"></assigment-list>
+
+    <form @submit.prevent="add">
+    <div class="border border-gray-600" >
+    <input v-model="newAssigment" placeholder="New Assigment" class="text-gray-800 p-2">
+    <button type="submit" class="bg-white text-black p-2 border-l">Add</button>
+    </div>
+</form>
     </section>
-</div>`,
+ `,
 data() {
     return { 
         assigments :[
@@ -25,15 +22,27 @@ data() {
         {name:'laravel', complet:false,id:2},
         {name:'node', complet:false,id:3},
         {name:'J query', complet:false,id:4},
-        ]
+        ],
+        newAssigment:'',
     }
 },
-computed: {
-    progressAssigments(){
-        return this.assigments.filter(assigment =>!assigment.complet);
-    },
-    compleatedAssigments(){
-        return this.assigments.filter(assigment =>assigment.complet);
+computed: { 
+    filters(){
+        return {
+            inProgress:this.assigments.filter(assigment =>!assigment.complet),
+            completed:this.assigments.filter(assigment =>assigment.complet)
+        }
+    }
+},
+methods: {
+    add(){
+      this.assigments.push({
+        name:this.newAssigment,
+        complet:false,
+        id:this.assigments.length+1
+      });
+      this.newAssigment=''
+
     }
 },
 }
