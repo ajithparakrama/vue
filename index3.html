@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-full grid place-items-center">
+        <div id="app">
+            <section v-show="progressAssigments.length" >
+                <h2 class="font-bold mb-2">Pending Assigments</h2>
+                <ul>
+                    <li v-for="asign in progressAssigments" :key="asign.id"> <label >
+                        {{ asign.name }} <input type="checkbox"  v-model="asign.complet" >
+                    </label></li> 
+                </ul>
+                </section>
+
+                <section v-show="compleatedAssigments.length"> 
+                <h2 class="font-bold mb-2">Completed</h2>
+                <ul>
+                    <li v-for="asign in compleatedAssigments"  :key="asign.id"> <label >
+                        {{ asign.name }} <input type="checkbox"  v-model="asign.complet" >
+                    </label></li> 
+                </ul>
+
+<!-- 
+                <pre>
+                    {{ assigments }}
+                </pre> -->
+            </section>
+        </div> 
+    <script>
+        let app = {
+
+        };
+
+        Vue.createApp(app).mount('#app');
+
+    </script>
+</body>
+</html>
