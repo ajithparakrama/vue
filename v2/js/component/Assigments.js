@@ -14,10 +14,10 @@ export default {
 data() {
     return { 
         assigments :[
-        {name:'vue', complet:false,id:1},
-        {name:'laravel', complet:false,id:2},
-        {name:'node', complet:false,id:3},
-        {name:'J query', complet:false,id:4},
+        {name:'vue', complet:false,id:1,tag:'front'},
+        {name:'laravel', complet:false,id:2,tag:'back'},
+        {name:'node', complet:false,id:3,tag:'server'},
+        {name:'J query', complet:false,id:4,tag:'front'},
         ],
         newAssigment:'',
     }
