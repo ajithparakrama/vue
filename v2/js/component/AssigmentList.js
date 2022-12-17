@@ -11,8 +11,6 @@ export default {
         :asign="asign">
         </assigment>
     </ul>
-
-
     </section>
     `,
 
