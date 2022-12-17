@@ -1,0 +1,8 @@
+{
+    "assigments":[
+        {"name":"vue", "complet":false,"id":1,"tag":"js"},
+        {"name":"react", "complet":false,"id":2,"tag":"js"},
+        {"name":"js", "complet":false,"id":3,"tag":"js"},
+        {"name":"Laravel", "complet":false,"id":4,"tag":"php"}
+    ]
+}

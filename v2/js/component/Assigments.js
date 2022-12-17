@@ -1,5 +1,5 @@
 import AssigmentList from "./AssigmentList.js";
-import AssigmentCreate from "./AssigmentCreate.js"; 
+import AssigmentCreate from "./AssigmentCreate.js";  
 export default {
     components:{AssigmentList,AssigmentCreate},
     template:`  
@@ -14,10 +14,7 @@ export default {
 data() {
     return { 
         assigments :[
-        {name:'vue', complet:false,id:1,tag:'front'},
-        {name:'laravel', complet:false,id:2,tag:'back'},
-        {name:'node', complet:false,id:3,tag:'server'},
-        {name:'J query', complet:false,id:4,tag:'front'},
+
         ],
         newAssigment:'',
     }
@@ -29,6 +26,13 @@ computed: {
             completed:this.assigments.filter(assigment =>assigment.complet)
         }
     }
+},
+created(){
+    fetch('http://localhost:3000/assigments')
+    .then(response=>response.json())
+    .then(assigments=>{
+       this.assigments = assigments;
+    });
 },
 methods: {
     add(name){
