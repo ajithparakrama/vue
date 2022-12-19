@@ -7,7 +7,13 @@ export default {
     <assigment-list :assigments="filters.inProgress" title="Pending Assigments">
     <assigment-create @add="add"></assigment-create>
     </assigment-list>
-    <assigment-list :assigments="filters.completed" title="Completed" can-toggle></assigment-list>
+    <assigment-list 
+    v-if="showCompleted"
+    :assigments="filters.completed" 
+    title="Completed" 
+    can-toggle 
+    @toggle="showCompleted =!showCompleted"
+    ></assigment-list>
 
  
 
@@ -15,9 +21,8 @@ export default {
  `,
 data() {
     return { 
-        assigments :[
-
-        ],
+        assigments :[],
+        showCompleted:true,
         newAssigment:'',
     }
 },

@@ -3,10 +3,10 @@ import AssigmentTags from "./AssigmentTags.js";
 export default {
     components:{Assigment, AssigmentTags},
     template:`
-    <section v-show="assigments.length"  class="w-60">
+    <section v-show="  assigments.length"  class="w-70">
     <div class="flex justify-between item-start" >
     <h2 class="font-bold mb-2">{{ title }}  <span> ({{ assigments.length }})</span> </h2>
-    <button v-show="canToggle" >&times;</button>
+    <button v-show="canToggle" @click="$emit('toggle')" >&times;</button>
     </div>
 
     <assigment-tags 
