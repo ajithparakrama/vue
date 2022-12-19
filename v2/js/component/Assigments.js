@@ -3,11 +3,13 @@ import AssigmentCreate from "./AssigmentCreate.js";
 export default {
     components:{AssigmentList,AssigmentCreate},
     template:`  
-    <section class="space-y-6">
-    <assigment-list :assigments="filters.inProgress" title="Pending Assigments"></assigment-list>
-    <assigment-list :assigments="filters.completed" title="Completed"></assigment-list>
-
+    <section class="flex gap-7">
+    <assigment-list :assigments="filters.inProgress" title="Pending Assigments">
     <assigment-create @add="add"></assigment-create>
+    </assigment-list>
+    <assigment-list :assigments="filters.completed" title="Completed" can-toggle></assigment-list>
+
+ 
 
     </section>
  `,
