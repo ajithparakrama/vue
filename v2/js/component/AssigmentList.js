@@ -1,9 +1,10 @@
 import Assigment from "./Assigment.js"
 import AssigmentTags from "./AssigmentTags.js";
+import Panel from "./Panel.js";
 export default {
-    components:{Assigment, AssigmentTags},
+    components:{Assigment, AssigmentTags, Panel},
     template:`
-    <section v-show="  assigments.length"  class="w-70">
+    <panel v-show="  assigments.length"  class="w-70">
     <div class="flex justify-between item-start" >
     <h2 class="font-bold mb-2">{{ title }}  <span> ({{ assigments.length }})</span> </h2>
     <button v-show="canToggle" @click="$emit('toggle')" >&times;</button>
@@ -22,7 +23,8 @@ export default {
         </assigment>
     </ul>
     <slot></slot>
-    </section>
+    <template #footer> New item footer</template>
+    </panel>
     `,
 
     props:{

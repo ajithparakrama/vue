@@ -41,12 +41,10 @@ created(){
        this.assigments = assigments;
     });
 },
-methods: {
-        name:name,
-        complet:false,
-        id:this.assigments.length+1
-      });
+// methods: {
+//         name:name,
+//         complet:false,
+//         id:this.assigments.length+1
+//       },
 
-    }
-},
-}
+    } 
