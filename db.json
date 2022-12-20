@@ -1,9 +1,14 @@
 {
     "assigments":[
-        {"name":"Vue js", "complet":false,"id":1,"tag":"font"},
-        {"name":"Javascript", "complet":false,"id":1,"tag":"font"},
-        {"name":"PHP", "complet":false,"id":1,"tag":"back"},
-        {"name":"Java", "complet":false,"id":1,"tag":"back"},
-        {"name":"Ruby", "complet":false,"id":1,"tag":"back"}
+        {"name":"vue", "complet":false,"id":1,"tag":"js"},
+        {"name":"react", "complet":false,"id":2,"tag":"js"},
+        {"name":"js", "complet":false,"id":3,"tag":"js"},
+        {"name":"Laravel", "complet":false,"id":4,"tag":"php"}
+    ],
+    "casdsd":[
+        {"name":"vue", "complet":false,"id":1,"tag":"js"},
+        {"name":"react", "complet":false,"id":2,"tag":"js"},
+        {"name":"js", "complet":false,"id":3,"tag":"js"},
+        {"name":"Laravel", "complet":false,"id":4,"tag":"php"}
     ]
 }
